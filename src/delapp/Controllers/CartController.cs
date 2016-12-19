@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using delapp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace delapp.Controllers
 {
@@ -20,34 +21,31 @@ namespace delapp.Controllers
         {
             return View(new CartIndexViewModel
             {
-                //Cart = GetCart(),
+                Cart = GetCart(),
                 ReturnUrl = returnUrl
             });
         }
 
-
-
         public Cart GetCart()
         {
-            Cart cart = (Cart)HttpContext.Session["Cart"];
+            Cart cart = null;
             if (cart == null)
             {
                 cart = new Cart();
-                Session["Cart"] = cart;
             }
             return cart;
         }
-
+        
         public async Task<IActionResult> AddToCart(int Id, string returnUrl)
         {
             Dish dish = db.Dish
                 .FirstOrDefault(b => b.Id == Id);
 
-            /*if (dish != null)
+            if (dish != null)
             {
                 GetCart().AddItem(dish, 1);
             }
-            */
+            
             return RedirectToAction ("Index", new { returnUrl });
         }
 
@@ -56,10 +54,10 @@ namespace delapp.Controllers
             Dish dish = db.Dish
                  .FirstOrDefault(b => b.Id == Id);
 
-            /*if (book != null)
+            if (dish != null)
             {
-                GetCart().RemoveLine(book);
-            }*/
+                GetCart().RemoveLine(dish);
+            }
 
             return RedirectToAction("Index", new { returnUrl });
         }

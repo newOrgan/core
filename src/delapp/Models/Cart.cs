@@ -42,7 +42,6 @@ namespace delapp.Models
             lineCollection.Clear();
         }
     }
-
     public class CartLine
     {
         public Dish Dish { get; set; }

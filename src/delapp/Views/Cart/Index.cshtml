@@ -1,27 +1,25 @@
 @model delapp.Models.CartIndexViewModel
-
 @{
     ViewData["Title"] = "Cart";
 }
 <h2>@ViewBag.Title</h2>
-
 <table class="table">
     <thead>
         <tr>
-            <th>Количество</th>
+            <th>asd</th>
             <th>Наименование</th>
             <th class="text-right">Цена</th>
             <th class="text-right">Сумма</th>
         </tr>
     </thead>
-    <tbody>
+   <tbody>
         @foreach (var line in Model.Cart.Lines)
         {
             <tr>
                 <td class="text-center">@line.Quantity</td>
                 <td class="text-left">@line.Dish.Name</td>
                 <td class="text-right">@line.Dish.Price.ToString("# руб")</td>
-                <td class="text-right">@((line.Quantity * line.Dish.Price).ToString("# руб"))</td>
+                <td class="text-right">((@line.Quantity * line.Dish.Price).ToString("# руб"))</td>
             </tr>
         }
     </tbody>
@@ -29,7 +27,7 @@
         <tr>
             <td colspan="3" class="text-right">Итого:</td>
             <td class="text-right">
-                @Model.Cart.ComputeTotalValue().ToString("# руб")
+               @Model.Cart.ComputeTotalValue().ToString("# руб")
             </td>
         </tr>
     </tfoot>
