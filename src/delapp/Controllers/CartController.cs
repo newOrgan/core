@@ -26,6 +26,7 @@ namespace delapp.Controllers
             });
         }
 
+
         public Cart GetCart()
         {
             Cart cart = null;
@@ -35,6 +36,7 @@ namespace delapp.Controllers
             }
             return cart;
         }
+
         
         public async Task<IActionResult> AddToCart(int Id, string returnUrl)
         {

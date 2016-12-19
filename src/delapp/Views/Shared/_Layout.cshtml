@@ -8,6 +8,11 @@
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/aydysStyle.css" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script type="text/javascript" src="~/js/jquery.bgpos.js"></script>
+        <script type="text/javascript" src="~/js/jquery-3.1.1.min.js"></script>
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -16,6 +21,38 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('a').click(function () {
+                var url = $(this).attr('href');
+                $.ajax({
+                    url: url,
+                    success: function (data) {
+                        $('.mybody-content').html(data);
+                    }
+                });
+                // А вот так просто меняется ссылка
+                if (url != window.location) {
+                    window.history.pushState(null, null, url);
+                }
+
+                // Предотвращаем дефолтное поведение
+                return false;
+            });
+
+            $(window).bind('popstate', function () {
+                $.ajax({
+                    url: location.pathname,
+                    success: function (data) {
+                        $('.mybody-content').html(data);
+                    }
+                });
+            });
+
+        });
+    </script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,10 +77,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+    <!--<hr />
         <footer>
             <p>&copy; 2016 - delapp</p>
         </footer>
+        -->
     </div>
 
     <environment names="Development">
