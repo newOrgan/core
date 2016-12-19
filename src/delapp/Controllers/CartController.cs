@@ -26,7 +26,7 @@ namespace delapp.Controllers
         }
 
 
-
+        /*
         public Cart GetCart()
         {
             Cart cart = (Cart)HttpContext.Session["Cart"];
@@ -37,7 +37,7 @@ namespace delapp.Controllers
             }
             return cart;
         }
-
+        */
         public async Task<IActionResult> AddToCart(int Id, string returnUrl)
         {
             Dish dish = db.Dish

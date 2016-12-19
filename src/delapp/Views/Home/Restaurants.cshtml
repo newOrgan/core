@@ -1,20 +1,31 @@
 ﻿@model IEnumerable<delapp.Models.Restaurant>
 @{
+    ViewData["Title"] = "1";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Список ресторанов</title>
-</head>
-<body>
     <div>
-        @foreach (var item in Model)
-        {
-            if(item.Categories == ViewBag.Rest)
+        <div class="mybody-content">
+            <h2 class="my_h2">@ViewBag.Rest</h2>
+            @foreach (var item in Model)
             {
-                <a href="~/Home/Dishes/@ViewBag.Rest@item.Name">@item.Name</a>
+                if (item.Categories == ViewBag.Rest)
+                {
+
+                    <a href="~/Home/Dishes/@ViewBag.Rest@item.Name">
+                        <div class="block_restor">
+                            <div class="img_kafe_ic"></div>
+                            <div class="content_kafe">
+                                <div class="title"> <h2>@item.Name</h2> </div>
+                                <div class="info">
+                                    block
+                                </div>
+                                <div class="content">
+                                    aasdasd
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                }
             }
-        }
+        </div>
     </div>
-</body>
-</html>

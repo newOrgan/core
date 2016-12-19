@@ -1,0 +1,181 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+body 
+{
+    background: #eee;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #c7c7c7;
+}
+
+.menuDiv 
+{
+    height: auto;
+    width: 100%;
+    background: #eee;
+    position: relative;
+    display: inline-block;
+}
+.ulMenu > li
+{
+    width: 24.1%;
+    list-style-type: none;
+    float: left;
+    /* padding: 80px; */
+    margin: 5px;
+    background: #eee;
+    position: relative;
+    min-height: 275px;
+    max-height: 300px;
+    background: blue;
+    height: 0px;
+}
+.menuDiv > h3
+{
+    text-align:center;
+}
+.bl1 {
+    background: red;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.bl1 > .imgBl1
+{
+    background-image:url("../images/margherita-pizza-0210-x.jpg");
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+}
+span.spanTitle {
+    color: #dedede;
+    font-size: 22px;
+    font-weight: 600;
+    bottom: 5px;
+    position: absolute;
+    width: 100%;
+}
+.zan{
+    width: 100%;
+    height: 100%;
+    background: rgba(84, 84, 84, 0.5);
+
+}
+.zan:hover{
+    background: rgba(239, 239, 239, 0.5);
+}
+
+#zan{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(255, 0, 0, 0.42);
+    opacity:0;
+}
+
+
+.transitionObj {
+    -webkit-transition: all 0.3s ease-out 0.3s;
+    -moz-transition: all 0.3s ease-out 0.3s;
+    -o-transition: all 0.3s ease-out 0.3s;
+    transition: all 0.3s ease-out 0.3s;
+}
+
+/*Style blocks*/
+    .bg1{
+        background-image: url(../images/margherita-pizza-0210-x.jpg);
+        background-size: cover;
+        /* padding: 200px 100px; */
+        width: 260px;
+        margin: 5px 1px 0px 0px;
+        height: 590px;  
+        position: relative;
+    }
+    ul.ulBlock {
+        display: inline-block;
+    }
+    ul.ulBlock > li{
+        float:left;
+        list-style:none;
+    }
+    .bgZn{
+        height: auto;
+        background: rgba(0, 0, 0, 0.48);
+        position: absolute;
+        bottom: 0px;
+        width:100%;
+    }
+    .bgTitle{
+        background: rgba(47, 47, 47, 0.84);
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .bgTitle > a{
+        padding: 15px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .bgZn > ul{
+        padding-left: 18px;
+        height:0px; /*Изменяемое значение*/
+    }
+    .bgZn > ul > li{
+        list-style:none;
+        display: none;   /*Изменяемое значение*/
+        opacity:0;
+    }
+    .bgZn > ul > li > a{
+        color:#fff;
+        text-decoration:none;
+        font-size: 16px;
+    }
+
+/*View 2*/
+.my_h2{
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 42px;
+}
+.block_restor {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(to right, #FFFFFF 0%, #f1f1f1 50%, #eee 100%);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #c7c7c7;
+
+    -webkit-transition: all 1s ease-out 1s;
+    -moz-transition: all 1s ease-out 1s;
+    -o-transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 1s;
+}
+.img_kafe_ic {
+    width: 30%;
+    height: 100%;
+    background-image:url(../images/margherita-pizza-0210-x.jpg);
+    background-size:cover;
+}
+.block_restor > div{
+    float:left;
+}
+.block_restor:hover{
+        background: linear-gradient(to right, #FFFFFF 0%, #e0e0e0 50%, #d6d6d6 100%);
+            
+
+}
+.content_kafe{
+    display: block;
+    padding-left: 30px;
+    height: 100%;
+    color: #525252;
+}
