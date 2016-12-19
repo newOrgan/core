@@ -30,7 +30,7 @@
                 $.ajax({
                     url: url,
                     success: function (data) {
-                        $('#content').html(data);
+                        $('.mybody-content').html(data);
                     }
                 });
                 // А вот так просто меняется ссылка
@@ -46,7 +46,7 @@
                 $.ajax({
                     url: location.pathname,
                     success: function (data) {
-                        $('#content').html(data);
+                        $('.mybody-content').html(data);
                     }
                 });
             });
@@ -77,10 +77,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+    <!--<hr />
         <footer>
             <p>&copy; 2016 - delapp</p>
         </footer>
+        -->
     </div>
 
     <environment names="Development">

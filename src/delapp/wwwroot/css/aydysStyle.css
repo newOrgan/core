@@ -12,6 +12,8 @@ hr {
     border: 0;
     border-top: 1px solid #c7c7c7;
 }
+.mybody-content{
+}
 
 .menuDiv 
 {
@@ -154,10 +156,10 @@ span.spanTitle {
     padding: 10px;
     border-bottom: 1px solid #c7c7c7;
 
-    -webkit-transition: all 1s ease-out 1s;
-    -moz-transition: all 1s ease-out 1s;
-    -o-transition: all 1s ease-out 1s;
-    transition: all 1s ease-out 1s;
+    -webkit-transition: all 0.3s ease-out 0.1s;
+    -moz-transition: all 0.3s ease-out 0.1s;
+    -o-transition: all 0.3s ease-out 0.1s;
+    transition: all 0.3s ease-out 0.1s;
 }
 .img_kafe_ic {
     width: 30%;
@@ -169,13 +171,20 @@ span.spanTitle {
     float:left;
 }
 .block_restor:hover{
-        background: linear-gradient(to right, #FFFFFF 0%, #e0e0e0 50%, #d6d6d6 100%);
-            
-
+    background: linear-gradient(to right, #FFFFFF 0%, #e0e0e0 50%, #d6d6d6 100%);
+    transform: perspective(0px) rotate3d(0,0,-1,0.3deg);
 }
 .content_kafe{
     display: block;
     padding-left: 30px;
     height: 100%;
     color: #525252;
+}
+/*dishes index*/
+.mytable{
+    width:100%;
+}
+.dishesdiv{
+    background:#fff;
+    padding:10px;
 }
