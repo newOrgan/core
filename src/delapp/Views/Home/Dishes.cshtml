@@ -1,0 +1,13 @@
+﻿@model IEnumerable<delapp.Models.Dish>
+@{
+
+}
+    <div>
+        @foreach (var item in Model)
+        {
+            if (item.Anything == ViewBag.Dish)
+            {
+                <p>@item.Name @item.Price</p>
+            }
+        }
+    </div>
