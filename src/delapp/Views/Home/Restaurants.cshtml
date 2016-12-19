@@ -1,0 +1,20 @@
+﻿@model IEnumerable<delapp.Models.Restaurant>
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список ресторанов</title>
+</head>
+<body>
+    <div>
+        @foreach (var item in Model)
+        {
+            if(item.Categories == ViewBag.Rest)
+            {
+                <a href="~/Home/Dishes/@ViewBag.Rest@item.Name">@item.Name</a>
+            }
+        }
+    </div>
+</body>
+</html>
