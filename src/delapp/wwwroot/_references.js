@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="js/cartscript.js" />
 /// <reference path="js/jquery.bgpos.js" />
 /// <reference path="js/jquery-3.1.1.min.js" />
 /// <reference path="js/kithcenblocks.js" />

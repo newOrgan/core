@@ -13,6 +13,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
         <script type="text/javascript" src="~/js/jquery.bgpos.js"></script>
         <script type="text/javascript" src="~/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="~/js/cartScript.js"></script>
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -23,38 +24,32 @@
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 
     <script type="text/javascript">
+        console.log(localStorage["myArray"]);
         $(document).ready(function () {
+            
+            //var res;
+            console.log(localStorage["arrayDishes"]);
 
-            $('a').click(function () {
-                var url = $(this).attr('href');
-                $.ajax({
-                    url: url,
-                    success: function (data) {
-                        $('.mybody-content').html(data);
-                    }
-                });
-                // А вот так просто меняется ссылка
-                if (url != window.location) {
-                    window.history.pushState(null, null, url);
-                }
+            $(".local").click(function () {
+                var myArray = ["One", "Two", ["One", "Two"], "four"];
+                localStorage["myArray"] = JSON.stringify(myArray);
+                
+                alert("Ok");
 
-                // Предотвращаем дефолтное поведение
-                return false;
+            });
+            $(".localDel").click(function () {
+                localStorage.clear();
+                alert("Данные удаленны");
             });
 
-            $(window).bind('popstate', function () {
-                $.ajax({
-                    url: location.pathname,
-                    success: function (data) {
-                        $('.mybody-content').html(data);
-                    }
-                });
-            });
 
         });
     </script>
 </head>
 <body>
+    <h6 class="local" style="cursor:pointer;">LocalStorage</h6>
+    <h6 class="localDel" style="cursor:pointer;">LocalStorage Delete</h6>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

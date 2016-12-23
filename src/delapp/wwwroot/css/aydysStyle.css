@@ -187,4 +187,73 @@ span.spanTitle {
 .dishesdiv{
     background:#fff;
     padding:10px;
+
+    /*!!*/
+    position: relative;
+    display: inline-block;
+}
+.mybody-content{
+    -webkit-transition: all 0.3s ease-out 0.1s;
+    -moz-transition: all 0.3s ease-out 0.1s;
+    -o-transition: all 0.3s ease-out 0.1s;
+    transition: all 0.3s ease-out 0.1s;
+}
+#content{
+    position: absolute;
+    background: #fff;
+    -webkit-transition: all 0.3s ease-out 0.1s;
+    -moz-transition: all 0.3s ease-out 0.1s;
+    -o-transition: all 0.3s ease-out 0.1s;
+    transition: all 0.3s ease-out 0.1s;
+}
+.top_ic{
+    display:none;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 40px;
+    margin-top: 10px;
+    cursor:pointer;
+}
+
+/*!!*/
+.tInfo {
+    float: left;
+}
+
+div#conteiner {
+    width: 100%; /* Ширина макета */
+    margin: 0 auto; /* Выравниваем макет по центру */
+    position: relative;
+    background: #fff;
+    position: relative;
+}
+.layer1{
+    background:#fff;
+    padding: 10px;
+}
+.layer2{
+    background: #fff;
+    padding: 10px;
+    min-height: 320px;
+    margin-left: 5px;
+}
+.layer1 > div {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #eee;
+}
+
+@media (min-width: 992px){
+    .col-md-8 {
+        width: 75.666667%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        width: 23.333333%;
+    }
 }

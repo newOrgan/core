@@ -1,32 +1,26 @@
 ﻿@model IEnumerable<delapp.Models.Dish>
 @{
-}
-    <div class="dishesdiv">
-        <table class="table-condensed mytable">
-            <tr>
-                <td>Название</td>
-                <td>Цена</td>
-                <td></td>
-            </tr>
-            @foreach (var item in Model)
-            {
-                if (item.Anything == ViewBag.Dish)
-                {
-                    <tr>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@using (Html.BeginForm("AddToCart", "Cart"))
-                        {
-                            <div class="pull-right">
-                                @Html.HiddenFor(x => item.Id)
-                                @Html.Hidden("returnUrl", Context.Request.Path, Context.Request.QueryString)
-                                <input type="submit" class="btn btn-success" value="Добавить в корзину" />
-                            </div>
+}   
 
-                        }</td>
-                    </tr>
-                }
-
-            }
-        </table>
+<div class="row">
+    <div class="col-md-8 layer1">
+    @foreach (var item in Model)
+    {
+        if (item.Anything == ViewBag.Dish)
+        {
+            <div>
+                <div class="tInfo"><img src="~/images/margherita-pizza-0210-x.jpg" style="width:130px; height:130px;" /></div>
+                <div class="tInfo" style="margin: 0px 30px 0px 30px;"><h5>@item.Name</h5></div>
+                <div class="tInfo" style="margin: 0px 30px 0px 30px;"><h5>@item.Price</h5></div>
+                <div class="tInfo" style="float: right;">
+                    <input type="submit" data-id="@item.Id" data-title="@item.Name" data-price="@item.Price" class="btn btn-success btnShop" value="Добавить в корзину" />
+                </div>
+                <div style="display: inline-block; padding: 0px 30px; width: 70%;">Нежное филе с соусом барбекю (куриное филе, грибы, помидор, лук, сливочно-чесночный соус</div>
+            </div>
+        }
+    }
     </div>
+    <div class="col-md-4 layer2">
+        
+    </div>
+</div>
