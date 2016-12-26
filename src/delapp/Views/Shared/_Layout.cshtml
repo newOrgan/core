@@ -6,6 +6,16 @@
     <title>@ViewData["Title"] - delapp</title>
 
     <environment names="Development">
+        <!--
+        <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation.min.css" />
+        <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation-rtl.min.css" />
+        <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation-flex.min.css" />
+        <script type="text/javascript" src="~/lib/foundation-sites/dist/foundation.min.js"></script>
+        <script type="text/javascript" src="~/lib/foundation-sites/dist/foundation.js"></script>
+        -->
+        <link rel="stylesheet" href="~/foundation/foundation.css" />
+        <link rel="stylesheet" href="~/foundation/app.css" />
+
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/aydysStyle.css" />
@@ -49,6 +59,8 @@
 <body>
     <h6 class="local" style="cursor:pointer;">LocalStorage</h6>
     <h6 class="localDel" style="cursor:pointer;">LocalStorage Delete</h6>
+    <p><a data-open="exampleModal1">Click me for a modal</a></p>
+    <button data-open="exampleModal1" type="button" class="success button mybtnOk" name="RevealWindow">Save</button>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -97,5 +109,12 @@
     </environment>
 
     @RenderSection("scripts", required: false)
+
+
+    <script type="text/javascript" src="~/foundation/vendor/jquery.js"></script>
+    <script type="text/javascript" src="~/foundation/vendor/what-input.js"></script>
+    <script type="text/javascript" src="~/foundation/vendor/foundation.min.js"></script>
+    <script type="text/javascript" src="~/foundation/app.js"></script>
+
 </body>
 </html>
