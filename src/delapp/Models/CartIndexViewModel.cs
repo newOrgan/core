@@ -7,8 +7,9 @@ namespace delapp.Models
 {
     public class CartIndexViewModel
     {
-        public Cart Cart { get; set; }
-        public string ReturnUrl { get; set; }
-
+        public Dish Dish { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public double price { get; set; }
     }
 }

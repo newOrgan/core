@@ -6,19 +6,18 @@
     <title>@ViewData["Title"] - delapp</title>
 
     <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <!--
         <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation.min.css" />
         <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation-rtl.min.css" />
         <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation-flex.min.css" />
         <script type="text/javascript" src="~/lib/foundation-sites/dist/foundation.min.js"></script>
-        <script type="text/javascript" src="~/lib/foundation-sites/dist/foundation.js"></script>
-        -->
-        <link rel="stylesheet" href="~/foundation/foundation.css" />
-        <link rel="stylesheet" href="~/foundation/app.css" />
+            -->
 
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/aydysStyle.css" />
+
+
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
         <script type="text/javascript" src="~/js/jquery.bgpos.js"></script>
@@ -57,10 +56,13 @@
     </script>
 </head>
 <body>
-    <h6 class="local" style="cursor:pointer;">LocalStorage</h6>
-    <h6 class="localDel" style="cursor:pointer;">LocalStorage Delete</h6>
-    <p><a data-open="exampleModal1">Click me for a modal</a></p>
-    <button data-open="exampleModal1" type="button" class="success button mybtnOk" name="RevealWindow">Save</button>
+
+    <div class="cartWin">
+        <h1>Awesome. I Have It.</h1>
+        <p class="lead">Your couch. It is mine.</p>
+        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+        <div class="btn1">Отправить</div>
+    </div>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -79,7 +81,11 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
+                <div class="cart_ic" data-open="exampleModal1">
+                    <div class="num_cart">10</div>
+                </div>
             </div>
+            
         </div>
     </div>
     <div class="container body-content">
@@ -115,6 +121,8 @@
     <script type="text/javascript" src="~/foundation/vendor/what-input.js"></script>
     <script type="text/javascript" src="~/foundation/vendor/foundation.min.js"></script>
     <script type="text/javascript" src="~/foundation/app.js"></script>
+
+    <script type="text/javascript" src="~/js/cartAjax.js"></script>
 
 </body>
 </html>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using delapp.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 namespace delapp.Controllers
 {
     public class HomeController : Controller
@@ -40,6 +41,17 @@ namespace delapp.Controllers
             db.Orders.Add(order);
             await db.SaveChangesAsync();
             return RedirectToAction("OrderIndex");
-        } 
+        }
+        [HttpPost]
+        public string ajaxfun ([FromBody] object vm)
+        {
+            List<CartIndexViewModel> list = new List<CartIndexViewModel>();
+            if(vm is CartIndexViewModel)
+            {
+                list.Add((CartIndexViewModel)vm);
+            }
+            Debug.WriteLine(list);
+            return "ok";
+        }
     }
 }

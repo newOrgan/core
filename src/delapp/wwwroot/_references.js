@@ -3,6 +3,7 @@
 /// <reference path="foundation/vendor/foundation.js" />
 /// <reference path="foundation/vendor/jquery.js" />
 /// <reference path="foundation/vendor/what-input.js" />
+/// <reference path="js/cartajax.js" />
 /// <reference path="js/cartscript.js" />
 /// <reference path="js/jquery.bgpos.js" />
 /// <reference path="js/jquery-3.1.1.min.js" />
