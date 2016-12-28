@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using delapp.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Collections;
+using Newtonsoft.Json;
+
 namespace delapp.Controllers
 {
     public class HomeController : Controller
@@ -20,7 +23,7 @@ namespace delapp.Controllers
             return View("Index");
         }
         ///////Метод для суши
-        
+
         public IActionResult Restaurants(string id)
         {
             ViewBag.Rest = id;
@@ -43,15 +46,28 @@ namespace delapp.Controllers
             return RedirectToAction("OrderIndex");
         }
         [HttpPost]
-        public string ajaxfun ([FromBody] object vm)
+        public List<string> ajaxfun()
         {
-            List<CartIndexViewModel> list = new List<CartIndexViewModel>();
-            if(vm is CartIndexViewModel)
-            {
-                list.Add((CartIndexViewModel)vm);
-            }
-            Debug.WriteLine(list);
-            return "ok";
+            string json = "{\"dish\": [{ \"id\":1,\"title\":\"Pepperoni\",\"price\":500}]}";//"[{\"FirstName\":\"Hans\",\"LastName\":\"Olo\"},{\"FirstName\":\"Jimmy\",\"LastName\":\"Crackedcorn\"}]";
+                            
+            var result = JsonConvert.DeserializeObject<RootObject>(json);
+
+            var firstNames = result.dish.Select(p=>p.title).ToList();
+            //var lastNames = result.People.Select(p => p.LastName).ToList();
+            return firstNames;
         }
+
     }
+
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
+    public class RootObject
+    {
+        public List<CartIndexViewModel> dish { get; set; }
+    }
+
 }

@@ -3,17 +3,21 @@
     var data = [];
     $(".btn1").click(function () {
         
-        data = JSON.parse(localStorage["arrayDishes"]);
-        console.log(data);
+        data = "{CartIndexViewModel:" + localStorage["arrayDishes"] + "}";
+
+        console.log("SS" + data);
         
         $.ajax ({
             url: "/home/ajaxfun",
             type: "POST",
-            data: JSON.stringify(data),
+            data: data,
             contentType: 'application/json; charset=utf-8',							
-            dateType: "html",
+            dateType: "json",
             success: function (data) {
-                console.log(data);
+                console.log(data );
+            },
+            error: function(){
+                alert("error");
             }
         });
         
