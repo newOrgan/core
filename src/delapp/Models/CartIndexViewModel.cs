@@ -12,6 +12,11 @@ namespace delapp.Models
         public string title { get; set; }
         public double price { get; set; }
     }
+    public class RootObject
+    {
+        public List<CartIndexViewModel> dish { get; set; }
+    }
+    
 
 
 }

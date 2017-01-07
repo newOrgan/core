@@ -45,20 +45,25 @@ namespace delapp.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("OrderIndex");
         }
+
         [HttpPost]
-        public List<string> ajaxfun()
+        public List<CartIndexViewModel> ajaxfun([FromBody]string json)
         {
-            string json = "{\"dish\": [{ \"id\":1,\"title\":\"Pepperoni\",\"price\":500}]}";//"[{\"FirstName\":\"Hans\",\"LastName\":\"Olo\"},{\"FirstName\":\"Jimmy\",\"LastName\":\"Crackedcorn\"}]";
-                            
             var result = JsonConvert.DeserializeObject<RootObject>(json);
 
-            var firstNames = result.dish.Select(p=>p.title).ToList();
-            //var lastNames = result.People.Select(p => p.LastName).ToList();
-            return firstNames;
+            //var firstNames = result.dish.Select(p=>p.title).ToList();
+            List<int> id = result.dish.Select(p => p.id).ToList();
+            List<string> title = result.dish.Select(p => p.title).ToList();
+
+            //var lastNames = result.dish.Select(p => p.id).ToList();
+            List<CartIndexViewModel> list = new List<CartIndexViewModel>();
+            list.Add(result.dish );
+            return lastNames;
         }
 
     }
 
+    /*
     public class Person
     {
         public string FirstName { get; set; }
@@ -69,5 +74,5 @@ namespace delapp.Controllers
     {
         public List<CartIndexViewModel> dish { get; set; }
     }
-
+    */
 }
